@@ -1,0 +1,18 @@
+<h3>Tracks</h3>
+
+<table>
+<th>title</th>
+<th>ord</th>
+<th>album</th>
+<th>band</th>
+
+<% @tracks.each do |track| %>
+<tr>
+  <td><%=track.title %> </td>
+  <td> <%= track.ord %> </td>
+  <td> <%= track.album.title %> </td>
+  <td> <%= track.band.name %></td>
+</tr>
+<% end %>
+
+</table>

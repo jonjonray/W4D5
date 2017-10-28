@@ -1,0 +1,26 @@
+<form action="<%=album_url%>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden"
+       name="authenticity_token"
+       value="<%= form_authenticity_token %>">
+
+  <label for="title">Album Title</label><br>
+  <input type="text" name="album[title]" value="<%=@album.title%>"><br><br>
+  <label for="year">Year</label><br>
+  <input type="year" name="album[year]" value="<%=@album.year%>"><br><br>
+
+  <label for="album[studio]">Studio Album</label>
+  <input type="radio" name="album[studio_album]" value="true" <%= "checked = 'checked'" if @album.studio_album == true %> />
+  <label for="album[studio]">Live Album</label>
+  <input type="radio" name="album[studio_album]" value="false" <%= "checked = 'checked'" if @album.studio_album == false %>/><br><br>
+
+  <select name="album[band_id]">
+    <option disabled> Please select a band </option>
+    <%@bands.each do |band| %>
+      <option value="<%=band.id%>" <%= "selected" if @album.band_id == band.id%>> <%= band.name %> </option>
+    <% end %>
+  </select><br><br>
+
+  <input type="submit" name="" value="Edit album">
+
+</form>

@@ -1,0 +1,19 @@
+
+<table>
+<th>Title</th>
+<th>Ord</th>
+<th>Album</th>
+<th>Band</th>
+<th>Bonus/Regular </th>
+
+<tr>
+  <td><%=@track.title %> </td>
+  <td> <%= @track.ord %> </td>
+  <td> <%= @track.album.title%></td>
+  <td> <%= @track.band.name %></td>
+  <td> <%= @track.bonus %></td>
+  <td> <%= @track.lyrics %></td>
+</tr>
+
+
+</table>

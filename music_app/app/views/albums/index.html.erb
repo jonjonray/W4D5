@@ -1,0 +1,21 @@
+<h3>Albums</h3>
+
+<table>
+<th>title</th>
+<th>year</th>
+<th>recording</th>
+<th>band</th>
+<% @albums.each do |album| %>
+<tr>
+  <td><%=album.title %> </td>
+  <td> <%= album.year %> </td>
+  <% if album.studio_album  %>
+  <td> <%= "Studio" %>  </td>
+  <% else %>
+    <td> <%= "Live" %>  </td>
+  <% end %>
+  <td> <%= album.band.name  %></td>
+  <% end %>
+</tr>
+
+</table>
